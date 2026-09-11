@@ -22,6 +22,7 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
     private const val PROP_UPDATER_ALLOW_DOWNGRADING = "lineage.updater.allow_downgrading"
     private const val PROP_UPDATER_URI = "lineage.updater.uri"
     private const val PROP_UPDATE_RECOVERY = "persist.vendor.recovery_update"
+    private const val PROP_HALOUI_FLAVOR = "ro.haloui.variant"
 
     // Read-only
     val androidVersion: String = Build.VERSION.RELEASE
@@ -47,6 +48,9 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
 
     @JvmStatic
     val releaseType: String = SystemProperties.get(PROP_RELEASE_TYPE)
+    
+    @JvmStatic
+    val variant: String = SystemProperties.get(PROP_HALOUI_FLAVOR)
 
     // Mutable at runtime
     @JvmStatic
